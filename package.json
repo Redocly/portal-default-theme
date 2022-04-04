@@ -1,0 +1,12 @@
+{
+  "name": "@redocly/default-theme",
+  "version": "1.0.5-local",
+  "description": "Default theme for @redocly/developer-portal",
+  "keywords": [
+    "redocly",
+    "developer portal",
+    "theme"
+  ],
+  "author": "",
+  "license": "ISC"
+}
