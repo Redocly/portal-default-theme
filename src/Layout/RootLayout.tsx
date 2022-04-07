@@ -5,7 +5,7 @@ interface LayoutConfig {
   footer: React.ReactNode;
 }
 
-export function Layout({ navbar, footer, children }: React.PropsWithChildren<LayoutConfig>) {
+export function RootLayout({ navbar, footer, children }: React.PropsWithChildren<LayoutConfig>) {
   return (
     <>
       {navbar}
