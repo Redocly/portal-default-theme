@@ -10,7 +10,7 @@ interface NavbarProps {
 
 export default function Navbar({ menu, logo, search }: NavbarProps) {
   return (
-    <NavbarContainer>
+    <NavbarContainer data-component-name="Navbar/Navbar">
       {logo}
       {menu}
       {search}

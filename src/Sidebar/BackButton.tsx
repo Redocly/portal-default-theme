@@ -8,7 +8,7 @@ interface BackButtonProps {
 
 export function BackButton({ children, back }: React.PropsWithChildren<BackButtonProps>) {
   return (
-    <Button onClick={back}>
+    <Button onClick={back} data-component-name="Sidebar/BackButton">
       <ArrowBack />
       {children}
     </Button>

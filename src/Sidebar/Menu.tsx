@@ -1,6 +1,11 @@
+import React from '@portal/react';
 import styled from '@portal/styled-components';
 
-export const Menu = styled.ul`
+export function Menu({ children }) {
+  return <Wrapper data-component-name="Sidebar/Menu">{children}</Wrapper>
+}
+
+const Wrapper = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;

@@ -1,7 +1,12 @@
+import React from '@portal/react';
 import styled from '@portal/styled-components';
 import { mediaQueries } from '@portal/media-css';
 
-export const ContentWrapper = styled.section<{ withToc: boolean }>`
+export function ContentWrapper({ withToc, children }) {
+  return <Wrapper withToc={withToc} data-component-name="Markdown/ContentWrapper">{children}</Wrapper>
+}
+
+const Wrapper = styled.section<{ withToc: boolean }>`
   max-width: var(--content-wrapper-max-width);
   width: 90%;
   margin: 0 auto;

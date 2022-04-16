@@ -1,3 +1,4 @@
+import React from '@portal/react';
 import { mediaCSS } from '@redocly/reference-docs';
 import styled, { css } from '@portal/styled-components';
 import { color, typography as typographySystem, ColorProps, TypographyProps } from '@portal/styled-system';
@@ -76,11 +77,19 @@ type HeadingProps = TypographyProps &
     mb?: string;
   };
 
-export const Emphasis = styled.strong`
+export function Emphasis(props) {
+  return <StyledEmphasis {...props} data-component-name="ui/Typography/Emphasis" />
+}
+
+const StyledEmphasis = styled.strong`
   font-weight: var(--font-weight-bold);
 `;
 
-export const H1 = styled.h1<HeadingProps>`
+export function H1(props: HeadingProps) {
+  return <StyledH1 {...props} data-component-name="ui/Typography/H1" />
+}
+
+const StyledH1 = styled.h1<HeadingProps>`
   ${typography(typographyTokens.heading1)};
   margin: 1.35em 0 0.9em;
   && {
@@ -91,7 +100,11 @@ export const H1 = styled.h1<HeadingProps>`
   }
 `;
 
-export const H2 = styled.h2<HeadingProps>`
+export function H2(props: HeadingProps) {
+  return <StyledH2 {...props} data-component-name="ui/Typography/H2" />
+}
+
+const StyledH2 = styled.h2<HeadingProps>`
   ${typography(typographyTokens.heading2)};
   margin: 1.25em 0 0.8em;
   && {
@@ -102,7 +115,11 @@ export const H2 = styled.h2<HeadingProps>`
   }
 `;
 
-export const H3 = styled.h3<HeadingProps>`
+export function H3(props: HeadingProps) {
+  return <StyledH3 {...props} data-component-name="ui/Typography/H3" />
+}
+
+const StyledH3 = styled.h3<HeadingProps>`
   ${typography(typographyTokens.heading3)};
   margin: 1.25em 0 0.8em;
   && {
@@ -123,7 +140,11 @@ export const SectionHeader = styled.h2`
   ${mediaCSS({ fontFamily: 'var(--font-family-h)' })};
 `;
 
-export const Typography = styled.p<
+export function Typography(props) {
+  return <StyledTypography {...props} data-component-name="ui/Typography/Typography" />
+}
+
+const StyledTypography = styled.p<
   TypographyProps & {
     color?: string;
     mt?: string;
@@ -138,7 +159,11 @@ export const Typography = styled.p<
   ${typographySystem}
 `;
 
-export const CompactTypography = styled(Typography).attrs(() => ({
+export function CompactTypography(props) {
+  return <StyledCompactTypography {...props} data-component-name="ui/Typography/CompactTypography" />
+}
+
+const StyledCompactTypography = styled(Typography).attrs(() => ({
   mt: '0em',
   mb: '0em',
 }))``;

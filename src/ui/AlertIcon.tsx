@@ -94,7 +94,7 @@ function Icon({ type, className }: IconProps) {
   }
 }
 
-export const AlertIcon = styled(Icon)`
+export const StyledAlertIcon = styled(Icon)`
   position: absolute;
   left: var(--alert-padding-horizontal);
   top: 50%;
@@ -106,3 +106,7 @@ export const AlertIcon = styled(Icon)`
 
   fill: ${({ type }) => `var(--alert-${type}-icon-color)`};
 `;
+
+export function AlertIcon(props) {
+  return <StyledAlertIcon {...props} data-component-name="ui/AlertIcon" />
+}

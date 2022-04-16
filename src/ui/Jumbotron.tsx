@@ -3,7 +3,11 @@ import { H1, H2 } from '@theme/ui/Typography';
 import styled from '@portal/styled-components';
 import { Background } from '@theme/ui/Background';
 
-export const Jumbotron = styled(Background)<{
+export function Jumbotron(props) {
+  return <StyledJumbotron {...props} data-component-name="ui/Jumbotron" />
+}
+
+export const StyledJumbotron = styled(Background)<{
   pt?: string;
   pb?: string;
   pl?: string;

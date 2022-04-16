@@ -19,7 +19,7 @@ export function CodeSample({ rawContent, highlighted, language }) {
   };
 
   return (
-    <Wrapper className="code-sample">
+    <Wrapper className="code-sample" data-component-name="Markdown/CodeSample/CodeSample">
       <CodeSampleButtonContainer onClick={() => copyCode(rawContent)}>
         {!isCopied && <CopyCodeButton title="Copy the code snippet">Copy</CopyCodeButton>}
         {isCopied && <DoneIndicator>Copied</DoneIndicator>}

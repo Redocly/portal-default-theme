@@ -111,6 +111,7 @@ export class WideTile extends React.Component<TileProps & { disableArrow?: boole
         className={className}
         style={style}
         maxWidth={maxWidth}
+        data-component-name="ui/Tiles/WideTile"
       >
         {icon && (
           <WideTileIcon>

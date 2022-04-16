@@ -10,7 +10,7 @@ export default function Footer({ columns, copyrightText }) {
   }
 
   return (
-    <FooterContainer>
+    <FooterContainer data-component-name="Footer/Footer">
       <FooterColumns columns={columns} />
       <FooterCopyright copyrightText={copyrightText} />
     </FooterContainer>

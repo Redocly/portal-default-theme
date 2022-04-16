@@ -25,7 +25,7 @@ export interface BoxProps
     ColorProps,
     BordersProps {}
 
-export const Box = styled.div<BoxProps>`
+const StyledBox = styled.div<BoxProps>`
   max-width: 100%;
   ${space}
   ${layout}
@@ -35,3 +35,7 @@ export const Box = styled.div<BoxProps>`
   ${color}
   ${border}
 `;
+
+export function Box(props: BoxProps) {
+  return <StyledBox {...props} data-component-name="ui/Box" />
+}

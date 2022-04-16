@@ -26,7 +26,7 @@ export function Heading({ level, id, children }) {
 
   return (
     // @ts-ignore
-    <TagName id={id} className="heading-anchor">
+    <TagName id={id} className="heading-anchor" data-component-name="Markdown/Heading/Heading">
       {linkEl}
       {children}
     </TagName>

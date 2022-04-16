@@ -128,6 +128,7 @@ export class ThinTile extends React.Component<TileProps> {
         // bgImage={bgImage}
         className={className}
         style={style}
+        data-component-name="ui/Tiles/ThinTile"
       >
         {(icon || header) && (
           <Flex flexDirection="column">

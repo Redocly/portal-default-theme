@@ -1,6 +1,11 @@
+import React from '@portal/react';
 import styled from '@portal/styled-components';
 
-export const MenuItemLabel = styled.li<{ active?: boolean }>`
+export function MenuItemLabel({ active, children }) {
+  return <Wrapper active={active} data-component-name="Sidebar/MenuItemLabel">{children}</Wrapper>
+}
+
+const Wrapper = styled.li<{ active?: boolean }>`
   display: flex;
   align-items: center;
   cursor: pointer;

@@ -9,7 +9,7 @@ import { MenuItemLabel } from '@theme/Sidebar/MenuItemLabel';
 
 export function ApiCallItem({ item }: MenuItemProps) {
   return (
-    <>
+    <Wrapper data-component-name="Sidebar/ApiCallItem">
       <MenuLinkItem item={item}>
         <MenuItemLabel active={item.active}>
           <Badge type={item.httpVerb}>{item.httpVerb === 'hook' ? 'event' : item.httpVerb}</Badge>
@@ -18,9 +18,11 @@ export function ApiCallItem({ item }: MenuItemProps) {
       </MenuLinkItem>
 
       {item.separatorLine ? <SeparatorLine /> : null}
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div``;
 
 export const Badge = styled(OperationBadge)`
   flex-shrink: 0;

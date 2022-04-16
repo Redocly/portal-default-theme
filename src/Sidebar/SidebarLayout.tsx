@@ -14,16 +14,18 @@ export function SidebarLayout({ versions, menu }: SidebarLayoutProps) {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <>
+    <Wrapper data-component-name="Sidebar/SidebarLayout">
       <MobileSidebarButton opened={isOpen} onClick={toggleMenu} />
 
       <Sidebar animate={true} opened={isOpen}>
         {versions}
         <MenuContainer>{menu}</MenuContainer>
       </Sidebar>
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div``;
 
 export const MenuContainer = styled.div`
   position: relative;
