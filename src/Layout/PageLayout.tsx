@@ -17,6 +17,7 @@ export function PageLayout({ sidebar, children }: React.PropsWithChildren<PageLa
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  min-height: calc(100vh - var(--navbar-height));
 `;
 
 const ContentContainer = styled.div`

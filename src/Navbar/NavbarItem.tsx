@@ -15,7 +15,7 @@ export function NavbarItem({ navItem }: NavbarItemProps) {
 
   return (
     <NavMenuItem active={isActive}>
-      <NavLink to={navItem.link}>
+      <NavLink to={navItem.link} active={isActive}>
         <NavLabel>{navItem.label}</NavLabel>
       </NavLink>
     </NavMenuItem>
@@ -43,6 +43,6 @@ const NavLink = styled(Link)`
 `;
 
 const NavLabel = styled.span`
-  cusror: pointer;
+  cursor: pointer;
   vertical-align: middle;
 `;
