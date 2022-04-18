@@ -107,7 +107,9 @@ export function headingAnchor(className = 'anchor') {
   `;
 }
 
-export const StyledMarkdownWrapper = styled.main`
+export const StyledMarkdown = styled.main.attrs(() => ({
+  'data-component-name': "Markdown/StyledMarkdown"
+}))`
   font-weight: var(--font-weight-regular);
   padding: 0;
 
@@ -307,7 +309,3 @@ export const StyledMarkdownWrapper = styled.main`
     }
   }
 `;
-
-export function StyledMarkdown({ children }) {
-  return <StyledMarkdownWrapper data-component-name="Markdown/StyledMarkdown">{children}</StyledMarkdownWrapper>
-}

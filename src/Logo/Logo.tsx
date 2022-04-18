@@ -5,8 +5,8 @@ import ConditionalLink from '@portal/ConditionalLink';
 
 export function Logo({ logo }: { logo: LogoConfig }) {
   return logo?.image ? (
-    <ConditionalLink item={logo} data-component-name="Logo/Logo">
-      <NavLogo src={logo.image} alt={logo.altText}></NavLogo>
+    <ConditionalLink item={logo}>
+      <NavLogo src={logo.image} alt={logo.altText} data-component-name="Logo/Logo" />
     </ConditionalLink>
   ) : null;
 }

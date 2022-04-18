@@ -17,4 +17,4 @@ export function MenuLinkItem({ item, children }: React.PropsWithChildren<MenuIte
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.span``;

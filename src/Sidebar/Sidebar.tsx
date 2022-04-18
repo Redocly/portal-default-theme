@@ -1,4 +1,3 @@
-import React from '@portal/react';
 import styled from '@portal/styled-components';
 import { mediaQueries } from '@portal/media-css';
 
@@ -7,19 +6,9 @@ interface SidebarProps {
   animate?: boolean;
 }
 
-export function Sidebar({ opened, animate, children }) {
-  return (
-    <Wrapper
-      opened={opened}
-      animate={animate}
-      data-component-name="Sidebar/Sidebar"
-    >
-      {children}
-    </Wrapper>
-  );
-}
-
-export const Wrapper = styled.aside<SidebarProps>`
+export const Wrapper = styled.aside.attrs(() => ({
+  'data-component-name': 'Sidebar/Sidebar'
+}))<SidebarProps>`
   border-right: 1px solid var(--sidebar-right-line-color);
   position: fixed;
   left: 0;

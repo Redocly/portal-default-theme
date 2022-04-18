@@ -1,12 +1,9 @@
-import React from '@portal/react';
 import styled from '@portal/styled-components';
 import { mediaQueries } from '@portal/media-css';
 
-export function MobileSidebarButton({ opened, children }) {
-  return <Wrapper opened={opened} data-component-name="Sidebar/MobileSidebarButton">{children}</Wrapper>
-}
-
-const Wrapper = styled.span<{ opened?: boolean }>`
+export const MobileSidebarButton = styled.span.attrs(() => ({
+  'data-component-name': 'Sidebar/MobileSidebarButton'
+}))<{ opened?: boolean }>`
   background-color: var(--color-primary-500);
   width: 55px;
   user-select: none;
