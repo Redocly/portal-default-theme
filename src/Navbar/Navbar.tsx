@@ -5,13 +5,15 @@ import { mediaQueries } from '@portal/media-css';
 interface NavbarProps {
   menu: React.ReactNode;
   logo: React.ReactNode;
+  search: React.ReactNode;
 }
 
-export default function Navbar({ menu, logo }: NavbarProps) {
+export default function Navbar({ menu, logo, search }: NavbarProps) {
   return (
     <NavbarContainer>
       {logo}
       {menu}
+      {search}
     </NavbarContainer>
   );
 }
