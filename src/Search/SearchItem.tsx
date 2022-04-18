@@ -53,6 +53,8 @@ const SearchLink = styled(Link)`
 const Title = styled.div`
   font-weight: 600;
   color: var(--search-item-title-text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Description = styled.div`
@@ -65,4 +67,6 @@ const Description = styled.div`
 const Path = styled.div`
   font-size: 12px;
   line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
