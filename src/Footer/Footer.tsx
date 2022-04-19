@@ -1,6 +1,5 @@
 import React from '@portal/react';
 import styled from '@portal/styled-components';
-import { mediaCSS } from '@redocly/reference-docs';
 import { FooterColumns } from '@theme/Footer/FooterColumns';
 import { FooterCopyright } from '@theme/Footer/FooterCopyright';
 
@@ -22,9 +21,9 @@ const FooterContainer = styled.footer`
   flex-shrink: 0;
   background-color: var(--footer-color-background);
   color: var(--footer-color-text);
+  font-family: var(--font-family-primary);
   a,
   a:hover {
     color: var(--footer-color-text);
   }
-  ${mediaCSS({ fontFamily: 'var(--font-family-primary)' })};
 `;
