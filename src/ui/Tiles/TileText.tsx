@@ -1,5 +1,4 @@
 import styled from '@portal/styled-components';
-import { mediaCSS } from '@redocly/reference-docs';
 
 export const TileText = styled.span.attrs(() => ({
   'data-component-name': 'ui/Tiles/TileText'
@@ -9,5 +8,5 @@ export const TileText = styled.span.attrs(() => ({
   overflow: hidden;
   color: ${props => props.color || 'var(--color-text-main)'};
   line-height: 1.25;
-  ${mediaCSS({ fontFamily: 'var(--font-family-primary)' })};
+  font-family: var(--font-family-primary);
 `;

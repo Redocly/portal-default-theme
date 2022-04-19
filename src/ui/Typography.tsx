@@ -1,4 +1,3 @@
-import { mediaCSS } from '@redocly/reference-docs';
 import styled, { css } from '@portal/styled-components';
 import { color, typography as typographySystem, ColorProps, TypographyProps } from '@portal/styled-system';
 
@@ -59,14 +58,12 @@ export const typographyTokens = {
 export function typography(theme) {
   if (!theme) return '';
   return css`
-    ${mediaCSS({
-      fontSize: theme.fontSize || '',
-      fontWeight: theme.fontWeight || '',
-      fontFamily: theme.fontFamily || '',
-      lineHeight: theme.lineHeight || '',
-      color: theme.color || '',
-      textTransform: theme.transform || '',
-    })}
+    font-size: ${theme.fontSize || ''};
+    font-weight: ${theme.fontWeight || ''};
+    font-family: ${theme.fontFamily || ''};
+    line-height: ${theme.lineHeight || ''};
+    color: ${theme.color || ''};
+    text-transform: ${theme.transform || ''};
   `;
 }
 
@@ -128,7 +125,7 @@ export const SectionHeader = styled.h2`
   text-align: center;
   margin: 2.65em 0;
   padding: 0px 20px;
-  ${mediaCSS({ fontFamily: 'var(--font-family-h)' })};
+  font-family: var(--font-family-h);
 `;
 
 export const Typography = styled.p.attrs(() => ({

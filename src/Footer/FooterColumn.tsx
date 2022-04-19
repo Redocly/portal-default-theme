@@ -1,6 +1,5 @@
 import React from '@portal/react';
 import styled from '@portal/styled-components';
-import { mediaCSS } from '@redocly/reference-docs';
 import { Link } from '@portal/Link';
 
 export default function FooterColumn({ column }) {
@@ -27,7 +26,7 @@ const FooterColumnTitle = styled.p`
   font-weight: var(--font-weight-regular);
   font-size: 24px;
   margin-bottom: 1.5em;
-  ${mediaCSS({ fontFamily: 'var(--font-family-h)' })};
+  font-family: var(--font-family-h);
 `;
 
 const FooterSeparator = styled.div`
@@ -35,7 +34,7 @@ const FooterSeparator = styled.div`
   margin: 10px 0 5px 0;
   font-size: 0.75em;
   text-transform: uppercase;
-  ${mediaCSS({ fontFamily: 'var(--font-family-h)' })};
+  font-family: var(--font-family-h);
 `;
 
 const FooterColumnContainer = styled.div`
