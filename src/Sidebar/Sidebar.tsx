@@ -6,7 +6,9 @@ interface SidebarProps {
   animate?: boolean;
 }
 
-export const Sidebar = styled.aside<SidebarProps>`
+export const Wrapper = styled.aside.attrs(() => ({
+  'data-component-name': 'Sidebar/Sidebar'
+}))<SidebarProps>`
   border-right: 1px solid var(--sidebar-right-line-color);
   position: fixed;
   left: 0;

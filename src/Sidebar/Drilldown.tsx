@@ -17,7 +17,7 @@ export function Drilldown({
   ...props
 }: React.PropsWithChildren<DrilldownProps>) {
   return (
-    <>
+    <Wrapper data-component-name="Sidebar/Drilldown">
       <DrilldownLabel onClick={expand}>
         <DrilldownMenuItem item={item} />
       </DrilldownLabel>
@@ -25,9 +25,11 @@ export function Drilldown({
       {isExpanded ? <DrilldownMenu item={item} {...props} /> : null}
 
       {item.separatorLine ? <SeparatorLine /> : null}
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div``;
 
 const DrilldownLabel = styled(MenuItemLabel)`
   padding-top: calc(var(--sidebar-spacing-padding-vertical) * 2);

@@ -1,4 +1,5 @@
 import React from '@portal/react';
+import styled from '@portal/styled-components';
 import { MenuItemProps } from '@portal/Sidebar/types';
 import { MenuLinkItem } from '@theme/Sidebar/MenuLinkItem';
 import { ExternalIcon } from '@theme/Sidebar/ExternalIcon';
@@ -7,7 +8,7 @@ import { SeparatorLine } from '@theme/Sidebar/SeparatorLine';
 
 export function MenuItem({ item }: MenuItemProps) {
   return (
-    <>
+    <Wrapper data-component-name="Sidebar/MenuItem">
       <MenuLinkItem item={item}>
         <MenuItemLabel active={item.active}>
           {item.label}
@@ -16,6 +17,8 @@ export function MenuItem({ item }: MenuItemProps) {
       </MenuLinkItem>
 
       {item.separatorLine ? <SeparatorLine /> : null}
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div``;

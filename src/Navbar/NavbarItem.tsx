@@ -14,7 +14,7 @@ export function NavbarItem({ navItem }: NavbarItemProps) {
   const isActive = pathname === withPathPrefix(navItem.link);
 
   return (
-    <NavMenuItem active={isActive}>
+    <NavMenuItem active={isActive} data-component-name="Navbar/NavbarItem">
       <NavLink to={navItem.link} active={isActive}>
         <NavLabel>{navItem.label}</NavLabel>
       </NavLink>

@@ -10,8 +10,8 @@ export function Button(
   props: ButtonProps & Partial<LinkProps<never>> & { ref?: any; external?: boolean },
 ) {
   if (props.to) {
-    return <StyledButtonAsLink {...props} role="button" />;
+    return <StyledButtonAsLink {...props} role="button" data-component-name="ui/Button" />;
   } else {
-    return <RefDocsButton {...(props as ButtonProps)} role="button" />;
+    return <RefDocsButton {...(props as ButtonProps)} role="button" data-component-name="ui/Button" />;
   }
 }

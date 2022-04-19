@@ -1,6 +1,8 @@
 import styled from '@portal/styled-components';
 
-export const Menu = styled.ul`
+export const Menu = styled.ul.attrs(() => ({
+  'data-component-name': 'Sidebar/Menu'
+}))`
   padding: 0;
   margin: 0;
   list-style: none;

@@ -1,6 +1,8 @@
 import styled from '@portal/styled-components';
 
-export const MenuItemLabel = styled.li<{ active?: boolean }>`
+export const MenuItemLabel = styled.li.attrs(() => ({
+  'data-component-name': 'Sidebar/MenuItemLabel'
+}))<{ active?: boolean }>`
   display: flex;
   align-items: center;
   cursor: pointer;

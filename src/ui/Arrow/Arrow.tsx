@@ -19,9 +19,11 @@ function directionToTransform({ direction }: ArrowProps) {
 }
 
 const Icon = ({ className }: React.HTMLProps<HTMLElement>) => (
-  <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 5" className={className}>
-    <path d="M3.5 2.51L5.806.205a.7.7 0 01.99.99l-2.8 2.8a.698.698 0 01-.99 0l-2.8-2.8a.7.7 0 11.99-.99L3.5 2.51z" />
-  </svg>
+  <span data-component-name="ui/Arrow/Arrow">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 5" className={className}>
+      <path d="M3.5 2.51L5.806.205a.7.7 0 01.99.99l-2.8 2.8a.698.698 0 01-.99 0l-2.8-2.8a.7.7 0 11.99-.99L3.5 2.51z" />
+    </svg>
+  </span>
 );
 
 export const Arrow = styled(Icon)`

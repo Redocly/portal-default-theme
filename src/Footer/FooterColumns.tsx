@@ -9,7 +9,7 @@ export function FooterColumns({ columns = [] }) {
   }
 
   return (
-    <FooterColumnsContainer>
+    <FooterColumnsContainer data-component-name="Footer/FooterColumns">
       <FooterRow>
         {columns.map((column, index) => (
           <FooterColumn key={index} column={column} />

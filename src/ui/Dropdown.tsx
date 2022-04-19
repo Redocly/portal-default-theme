@@ -96,7 +96,7 @@ export default function Dropdown({ items, activeItem }) {
   }, [isOpen]);
 
   return (
-    <DropDownContainer ref={ref}>
+    <DropDownContainer ref={ref} data-component-name="ui/Dropdown">
       <DropDownHeader onClick={toggling}>
         {activeItem?.label || activeItem.version}
         <IconWrapper className={!!isOpen && 'active'}>

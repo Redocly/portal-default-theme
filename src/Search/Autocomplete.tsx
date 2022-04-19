@@ -83,7 +83,7 @@ export function Autocomplete<T>({
   useEffect(close, [location]);
 
   return (
-    <>
+    <Wrapper data-component-name="Search/Autocomplete">
       {isOpen ? <Overlay onClick={close} /> : null}
       <AutocompleteBox onKeyDown={onKeydown}>
         <FormInput
@@ -100,9 +100,11 @@ export function Autocomplete<T>({
           <Popover>{items.length ? items.map(mapItem) : <Message>No results</Message>}</Popover>
         ) : null}
       </AutocompleteBox>
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div``
 
 const AutocompleteBox = styled.div`
   display: flex;

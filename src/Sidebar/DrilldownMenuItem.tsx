@@ -4,7 +4,7 @@ import { MenuItemProps } from '@portal/Sidebar/types';
 
 export function DrilldownMenuItem({ item }: MenuItemProps) {
   return (
-    <Container>
+    <Container data-component-name="Sidebar/DrilldownMenuItem">
       {item.icon ? <Icon src={item.icon} /> : null}
       <div>
         {item.label}

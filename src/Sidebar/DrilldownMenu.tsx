@@ -17,7 +17,7 @@ export function DrilldownMenu({
   children,
 }: React.PropsWithChildren<DrilldownMenuProps>) {
   return (
-    <MenuContainer>
+    <MenuContainer data-component-name="Sidebar/DrilldownMenu">
       <MenuContent>
         <MenuWrapper>
           <BackButton back={back}>{prevActiveItem?.label || 'Back'}</BackButton>

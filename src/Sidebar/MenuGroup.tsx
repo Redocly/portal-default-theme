@@ -19,7 +19,7 @@ export function MenuGroup({
   children,
 }: React.PropsWithChildren<MenuGroupProps>) {
   return (
-    <>
+    <Wrapper data-component-name="Sidebar/MenuGroup">
       <MenuLinkItem item={item}>
         <MenuGroupLabel
           onClick={toggleExpanded}
@@ -34,9 +34,11 @@ export function MenuGroup({
       <MenuWrapper>{isExpanded ? children : null}</MenuWrapper>
 
       {item.separatorLine ? <SeparatorLine /> : null}
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div``;
 
 const MenuWrapper = styled.div`
   padding-left: var(--sidebar-spacing-offset-nesting);

@@ -6,12 +6,14 @@ import { MenuItemLabel } from '@theme/Sidebar/MenuItemLabel';
 
 export function Separator({ item }: MenuItemProps) {
   return (
-    <>
+    <Wrapper data-component-name="Sidebar/Separator">
       <SeparatorItem>{item.label}</SeparatorItem>
       {item.separatorLine ? <SeparatorLine /> : null}
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div``;
 
 export const SeparatorItem = styled(MenuItemLabel)`
   cursor: default;

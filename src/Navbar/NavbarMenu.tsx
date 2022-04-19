@@ -9,7 +9,7 @@ export default function NavbarMenu({ menuItems }) {
   }
 
   return (
-    <NavItemsContainer>
+    <NavItemsContainer data-component-name="Navbar/NavbarMenu">
       {menuItems.map((navItem, index) => {
         return <NavbarItem key={index} data-cy={navItem.label} navItem={navItem} />;
       })}

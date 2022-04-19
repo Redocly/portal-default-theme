@@ -27,7 +27,7 @@ export default function TableOfContent(props: TableOfContentProps) {
   return (
     <>
       {headings && (
-        <TableOfContentMenu>
+        <TableOfContentMenu data-component-name="TableOfContent/TableOfContent">
           <TableOfContentItems ref={sidebar}>
             <TocHeader>On this page</TocHeader>
             {headings.map((heading: MdHeading, idx: number) => {

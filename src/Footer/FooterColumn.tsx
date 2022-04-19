@@ -5,7 +5,7 @@ import { Link } from '@portal/Link';
 
 export default function FooterColumn({ column }) {
   return (
-    <FooterColumnContainer>
+    <FooterColumnContainer data-component-name="Footer/FooterColumn">
       <FooterColumnTitle>{column.group || column.label}</FooterColumnTitle>
       {column.items.map((columnItem, columnItemInex) =>
         columnItem.type === 'separator' ? (

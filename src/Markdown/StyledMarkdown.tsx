@@ -1,3 +1,4 @@
+import React from '@portal/react';
 import styled, { css } from '@portal/styled-components';
 import { typography, typographyTokens } from '@theme/ui/Typography';
 
@@ -106,7 +107,9 @@ export function headingAnchor(className = 'anchor') {
   `;
 }
 
-export const StyledMarkdown = styled.main`
+export const StyledMarkdown = styled.main.attrs(() => ({
+  'data-component-name': "Markdown/StyledMarkdown"
+}))`
   font-weight: var(--font-weight-regular);
   padding: 0;
 

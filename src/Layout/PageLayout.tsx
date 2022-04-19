@@ -7,7 +7,7 @@ interface PageLayoutProps {
 
 export function PageLayout({ sidebar, children }: React.PropsWithChildren<PageLayoutProps>) {
   return (
-    <Container>
+    <Container data-component-name="Layout/PageLayout">
       {sidebar}
       <ContentContainer>{children}</ContentContainer>
     </Container>

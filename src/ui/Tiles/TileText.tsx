@@ -1,7 +1,9 @@
 import styled from '@portal/styled-components';
 import { mediaCSS } from '@redocly/reference-docs';
 
-export const TileText = styled.span<{ color?: string }>`
+export const TileText = styled.span.attrs(() => ({
+  'data-component-name': 'ui/Tiles/TileText'
+}))<{ color?: string }>`
   display: inline-block;
   font-weight: var(--font-weight-regular);
   overflow: hidden;

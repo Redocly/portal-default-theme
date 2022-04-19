@@ -2,7 +2,11 @@ import React from '@portal/react';
 import styled from '@portal/styled-components';
 
 export function Mermaid({ diagramHtml }) {
-  return <Wrapper className="mermaid-wrapper" dangerouslySetInnerHTML={{ __html: diagramHtml }} />;
+  return <Wrapper
+    className="mermaid-wrapper"
+    dangerouslySetInnerHTML={{ __html: diagramHtml }}
+    data-component-name="Markdown/Mermaid/Mermaid"
+  />;
 }
 
 const Wrapper = styled.div`

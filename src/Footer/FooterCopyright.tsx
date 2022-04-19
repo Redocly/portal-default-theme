@@ -2,7 +2,7 @@ import React from '@portal/react';
 import styled from '@portal/styled-components';
 
 export function FooterCopyright({ copyrightText = '' }) {
-  return copyrightText ? <Wrapper>{copyrightText}</Wrapper> : null;
+  return copyrightText ? <Wrapper data-component-name="Footer/FooterCopyright">{copyrightText}</Wrapper> : null;
 }
 
 export const Wrapper = styled.section`

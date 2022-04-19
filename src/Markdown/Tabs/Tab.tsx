@@ -4,7 +4,7 @@ import styled from '@portal/styled-components';
 export function Tab({ activeTab, label, onClick }) {
   const isActive = activeTab === label;
   return (
-    <TabItem active={isActive} onClick={() => onClick(label)}>
+    <TabItem active={isActive} onClick={() => onClick(label)} data-component-name="Markdown/Tabs/Tab">
       {label}
     </TabItem>
   );

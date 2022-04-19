@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const FormInput = styled.input`
+export const FormInput = styled.input.attrs(() => ({
+  'data-component-name': 'Search/Input'
+}))`
   padding: 1em 2.5em 1em 1em;
   background-color: var(--input-background-color);
   border-radius: var(--input-border-radius);

@@ -76,11 +76,15 @@ type HeadingProps = TypographyProps &
     mb?: string;
   };
 
-export const Emphasis = styled.strong`
+export const Emphasis = styled.strong.attrs(() => ({
+  'data-component-name': 'ui/Typography/Emphasis'
+}))`
   font-weight: var(--font-weight-bold);
 `;
 
-export const H1 = styled.h1<HeadingProps>`
+export const H1 = styled.h1.attrs(() => ({
+  'data-component-name': 'ui/Typography/H1'
+}))<HeadingProps>`
   ${typography(typographyTokens.heading1)};
   margin: 1.35em 0 0.9em;
   && {
@@ -91,7 +95,9 @@ export const H1 = styled.h1<HeadingProps>`
   }
 `;
 
-export const H2 = styled.h2<HeadingProps>`
+export const H2 = styled.h1.attrs(() => ({
+  'data-component-name': 'ui/Typography/H2'
+}))<HeadingProps>`
   ${typography(typographyTokens.heading2)};
   margin: 1.25em 0 0.8em;
   && {
@@ -102,7 +108,9 @@ export const H2 = styled.h2<HeadingProps>`
   }
 `;
 
-export const H3 = styled.h3<HeadingProps>`
+export const H3 = styled.h1.attrs(() => ({
+  'data-component-name': 'ui/Typography/H3'
+}))<HeadingProps>`
   ${typography(typographyTokens.heading3)};
   margin: 1.25em 0 0.8em;
   && {
@@ -123,7 +131,9 @@ export const SectionHeader = styled.h2`
   ${mediaCSS({ fontFamily: 'var(--font-family-h)' })};
 `;
 
-export const Typography = styled.p<
+export const Typography = styled.p.attrs(() => ({
+  'data-component-name': "ui/Typography/Typography"
+}))<
   TypographyProps & {
     color?: string;
     mt?: string;
@@ -141,4 +151,5 @@ export const Typography = styled.p<
 export const CompactTypography = styled(Typography).attrs(() => ({
   mt: '0em',
   mb: '0em',
+  'data-component-name': 'ui/Typography/CompactTypography'
 }))``;

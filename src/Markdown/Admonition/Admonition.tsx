@@ -12,7 +12,7 @@ interface AdmonitionProps extends Partial<AdmonitionTypeProps> {
 
 export function Admonition({ type = 'info', name, children }: React.PropsWithChildren<AdmonitionProps>) {
   return (
-    <Wrapper type={type}>
+    <Wrapper type={type} data-component-name="Markdown/Admonition/Admonition">
       <AlertIcon type={type} />
       {name ? <Heading type={type}>{name}</Heading> : null}
       <Content>{children}</Content>

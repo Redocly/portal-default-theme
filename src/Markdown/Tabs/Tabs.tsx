@@ -7,7 +7,7 @@ export function Tabs({ children }) {
   const onTabSelect = label => setActiveTab(label);
 
   return (
-    <TabsContainer>
+    <TabsContainer data-component-name="Markdown/Tabs/Tabs">
       <TabList>
         {children.map(child => {
           const { label } = child.props;
