@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from '@portal/styled-components';
 
 import { usePreloadHistory } from '@portal/usePreloadHistory';
 import { useFuseSearch } from '@portal/search';
@@ -14,7 +15,7 @@ export function Search() {
   const navigate = item => history.push(item.url);
 
   return (
-    <>
+    <Wrapper data-component-name="Search/Search">
       <Autocomplete
         items={items}
         value={query}
@@ -25,6 +26,8 @@ export function Search() {
       >
         {(isOpen, reset) => (isOpen ? <ClearIcon onClick={reset} /> : <SearchIcon />)}
       </Autocomplete>
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div``

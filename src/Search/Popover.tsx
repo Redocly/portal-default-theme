@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Popover = styled.div`
+export const Popover = styled.div.attrs(() => ({
+  'data-component-name': 'Search/Popover'
+}))`
   position: absolute;
   top: calc(100% + 10px);
   right: 0;

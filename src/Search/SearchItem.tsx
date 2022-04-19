@@ -27,7 +27,7 @@ export function SearchItem({ item }: SearchItemProps) {
   }, [item.active]);
 
   return (
-    <SearchLink to={item.url} tabIndex={0} innerRef={ref}>
+    <SearchLink to={item.url} tabIndex={0} innerRef={ref} data-component-name="Search/SearchItem">
       <Title>{item.title}</Title>
       <Description>{highlight(item.chunks)}</Description>
       <Path>{item.path.join(' > ')}</Path>
