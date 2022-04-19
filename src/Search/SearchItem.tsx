@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { Link } from '@portal/Link';
+import { OperationBadge } from '@redocly/reference-docs';
 import { ActiveItem, SearchDocument } from '@shared/models';
 
 interface SearchItemProps {
@@ -24,12 +25,17 @@ export function SearchItem({ item }: SearchItemProps) {
       ref.current.focus();
     }
   }, [item.active]);
-
   return (
-    <SearchLink to={item.url} tabIndex={0} innerRef={ref} data-component-name="Search/SearchItem">
-      <Title>{item.title}</Title>
+    <SearchLink to={item.url} tabIndex={0} innerRef={ref}>
+      <Title>
+        {item.httpVerb && <Badge type={item.httpVerb}>{item.httpVerb}</Badge>}
+        {item.title}
+      </Title>
       <Description>{highlight(item.chunks)}</Description>
-      <Path>{item.path.join(' > ')}</Path>
+      <Path>
+        {item.place && (item.place + ' > ')}
+        {item.path.join(' > ')}
+      </Path>
     </SearchLink>
   );
 }
@@ -68,4 +74,9 @@ const Path = styled.div`
   line-height: 22px;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+const Badge = styled(OperationBadge)`
+  position: relative;
+  bottom: 2px;
 `;
