@@ -1,6 +1,6 @@
 import styled from '@portal/styled-components';
 
-export const Wrapper = styled.div.attrs(() => ({
+export const PageWrapper = styled.div.attrs(() => ({
   'data-component-name': 'Markdown/PageWrapper'
 }))`
   display: flex;
