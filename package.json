@@ -1,6 +1,6 @@
 {
   "name": "@redocly/default-theme",
-  "version": "1.0.6-local",
+  "version": "0.1.0",
   "description": "Default theme for @redocly/developer-portal",
   "keywords": [
     "redocly",
@@ -8,5 +8,21 @@
     "theme"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "test:unit": "jest",
+    "test:unit:ci": "npm run test:ci -- ./src",
+    "test:coverage": "jest --coverage",
+    "test:ci": "npx jest --coverage --coverageReporters=\"text\" --coverageReporters=\"text-summary\" --silent --ci"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.1",
+    "eslint-plugin-jest": "^26.1.4",
+    "jest": "^27.5.1",
+    "jest-styled-components": "^7.0.8",
+    "ts-jest": "^27.1.4"
+  }
 }
