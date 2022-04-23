@@ -11,6 +11,7 @@
   "license": "ISC",
   "scripts": {
     "lint": "eslint . --ext .ts,.tsx --cache",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "test:unit": "jest",
     "test:unit:ci": "npm run test:ci -- ./src",
     "test:coverage": "jest --coverage",
@@ -20,6 +21,7 @@
     "prettier:check": "npm run prettier-base -- --check",
     "ts:check": "tsc --noEmit --skipLibCheck",
     "prepare": "husky install"
+    
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.3",
