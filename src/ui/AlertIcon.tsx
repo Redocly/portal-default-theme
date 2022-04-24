@@ -1,5 +1,5 @@
-import React from '@portal/react';
-import styled from '@portal/styled-components';
+import React from 'react';
+import styled from 'styled-components';
 
 interface IconProps extends React.HTMLProps<HTMLElement> {
   type: 'warning' | 'success' | 'danger' | 'attention' | 'info';

@@ -1,5 +1,5 @@
-import React from '@portal/react';
-import styled from '@portal/styled-components';
+import React from 'react';
+import styled from 'styled-components';
 
 export function FooterCopyright({ copyrightText = '' }) {
   return copyrightText ? <Wrapper data-component-name="Footer/FooterCopyright">{copyrightText}</Wrapper> : null;

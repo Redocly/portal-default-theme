@@ -1,5 +1,5 @@
-import React from '@portal/react';
-import styled from '@portal/styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { mediaQueries } from '@portal/media-css';
 import { NavbarItem } from '@theme/Navbar/NavbarItem';
 

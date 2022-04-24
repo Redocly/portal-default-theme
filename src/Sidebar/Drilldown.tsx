@@ -1,5 +1,5 @@
-import React from '@portal/react';
-import styled from '@portal/styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { MenuItemLabel } from '@theme/Sidebar/MenuItemLabel';
 import { SeparatorLine } from '@theme/Sidebar/SeparatorLine';
 import { DrilldownMenuItem } from '@theme/Sidebar/DrilldownMenuItem';

@@ -1,5 +1,5 @@
-import styled, { css } from '@portal/styled-components';
-import { color, typography as typographySystem, ColorProps, TypographyProps } from '@portal/styled-system';
+import styled, { css } from 'styled-components';
+import { color, typography as typographySystem, ColorProps, TypographyProps } from 'styled-system';
 
 export const typographyTokens = {
   typography: {

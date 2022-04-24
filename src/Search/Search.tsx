@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@portal/styled-components';
+import styled from 'styled-components';
 
 import { usePreloadHistory } from '@portal/usePreloadHistory';
 import { useFuseSearch } from '@portal/search';

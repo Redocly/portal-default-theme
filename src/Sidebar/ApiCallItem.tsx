@@ -1,5 +1,5 @@
-import React from '@portal/react';
-import styled from '@portal/styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { MenuItemProps } from '@portal/Sidebar/types';
 import { OperationBadge } from '@redocly/reference-docs';
 import { MenuLinkItem } from '@theme/Sidebar/MenuLinkItem';

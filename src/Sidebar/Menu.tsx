@@ -1,4 +1,4 @@
-import styled from '@portal/styled-components';
+import styled from 'styled-components';
 
 export const Menu = styled.ul.attrs(() => ({
   'data-component-name': 'Sidebar/Menu'

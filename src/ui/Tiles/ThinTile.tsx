@@ -1,7 +1,7 @@
-import React from '@portal/react';
+import React from 'react';
+import styled from 'styled-components';
 import { Link } from '@portal/Link';
 import { Flex } from '@theme/ui/Flex';
-import styled from '@portal/styled-components';
 import { mediaQueries } from '@portal/media-css';
 import { TileText } from '@theme/ui/Tiles/TileText';
 import { TileHeader } from '@theme/ui/Tiles/TileHeader';

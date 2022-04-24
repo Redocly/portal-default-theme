@@ -1,4 +1,4 @@
-import styled from '@portal/styled-components';
+import styled from 'styled-components';
 
 export const TileHeader = styled.h3.attrs(() => ({
   'data-component-name': 'ui/Tiles/TileHeader'

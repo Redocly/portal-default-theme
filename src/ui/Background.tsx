@@ -1,5 +1,5 @@
+import styled from 'styled-components';
 import { Flex } from '@theme/ui/Flex';
-import styled from '@portal/styled-components';
 
 export const Background = styled(Flex).attrs(() => ({
   'data-component-name': 'ui/Background'

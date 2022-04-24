@@ -1,5 +1,4 @@
-import { useEffect, useRef } from 'react';
-import * as React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { Link } from '@portal/Link';

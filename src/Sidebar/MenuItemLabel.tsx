@@ -1,4 +1,4 @@
-import styled from '@portal/styled-components';
+import styled from 'styled-components';
 
 export const MenuItemLabel = styled.li.attrs(() => ({
   'data-component-name': 'Sidebar/MenuItemLabel'

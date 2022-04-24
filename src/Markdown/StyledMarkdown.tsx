@@ -1,5 +1,4 @@
-import React from '@portal/react';
-import styled, { css } from '@portal/styled-components';
+import styled, { css } from 'styled-components';
 import { typography, typographyTokens } from '@theme/ui/Typography';
 
 export const baseTable = css`

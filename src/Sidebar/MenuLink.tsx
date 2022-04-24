@@ -1,4 +1,4 @@
-import styled from '@portal/styled-components';
+import styled from 'styled-components';
 import { UniversalLink } from '@portal/UniversalLink/UniversalLink';
 
 export const MenuLink = styled(UniversalLink).attrs(() => ({
