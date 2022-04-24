@@ -1,26 +1,21 @@
 import React from '@portal/react';
 import styled from '@portal/styled-components';
 import type { ResolvedNavLinkItem } from '@portal/types';
-import { Button } from '@theme/ui';
+import { usePageData } from '@portal/hooks/useData';
+import { PreviousPageLink } from '@theme/PageNavigation/PreviousPageLink';
+import { NextPageLink } from '@theme/PageNavigation/NextPageLink';
 
 interface PageNavigationProps {
-  prev: ResolvedNavLinkItem | null;
-  next: ResolvedNavLinkItem | null;
+  prevPage: ResolvedNavLinkItem | null;
+  nextPage: ResolvedNavLinkItem | null;
 }
 
-export function PageNavigation({ prev, next }: PageNavigationProps) {
+export function PageNavigation() {
+  const { prevPage, nextPage }: PageNavigationProps = usePageData('prevPage', 'nextPage');
   return (
     <PageNavigationWrapper data-component-name="PageNavigation/PageNavigation">
-      {prev && (
-        <Button variant="outlined" size="large" to={prev.link}>
-          Back to {prev.label}
-        </Button>
-      )}
-      {next && (
-        <Button variant="outlined" size="large" to={next.link}>
-          Next to {next.label}
-        </Button>
-      )}
+      <PreviousPageLink data={prevPage} />
+      <NextPageLink data={nextPage} />
     </PageNavigationWrapper>
   )
 }
