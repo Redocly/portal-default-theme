@@ -1,4 +1,4 @@
-import React from '@portal/react';
+import React from 'react';
 import type { ResolvedNavLinkItem } from '@portal/types';
 import { usePageData } from '@portal/hooks/usePageData';
 import { Button } from '@theme/ui';
@@ -6,7 +6,7 @@ import { Button } from '@theme/ui';
 type PreviousPageLink = ResolvedNavLinkItem | null;
 
 export function PreviousPageLink() {
-  const { prevPage }: PreviousPageLink = usePageData('prevPage');
+  const { prevPage }: PreviousPageLink = usePageData();
   if (!prevPage) {
     return <div>&nbsp;</div>
   }

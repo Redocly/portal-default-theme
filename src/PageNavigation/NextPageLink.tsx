@@ -1,4 +1,4 @@
-import React from '@portal/react';
+import React from 'react';
 import type { ResolvedNavLinkItem } from '@portal/types';
 import { usePageData } from '@portal/hooks/usePageData';
 import { Button } from '@theme/ui';
@@ -6,7 +6,7 @@ import { Button } from '@theme/ui';
 type NextPageLink = ResolvedNavLinkItem | null;
 
 export function NextPageLink() {
-  const { nextPage }: NextPageLink = usePageData('nextPage');
+  const { nextPage }: NextPageLink = usePageData();
   if (!nextPage) {
     return <div>&nbsp;</div>
   }
