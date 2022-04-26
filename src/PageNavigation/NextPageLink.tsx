@@ -1,19 +1,19 @@
 import React from '@portal/react';
 import type { ResolvedNavLinkItem } from '@portal/types';
+import { usePageData } from '@portal/hooks/usePageData';
 import { Button } from '@theme/ui';
 
-interface NextPageLinkProps {
-  data: ResolvedNavLinkItem | null
-}
+type NextPageLink = ResolvedNavLinkItem | null;
 
-export function NextPageLink({ data }: NextPageLinkProps) {
-  if (!data) {
+export function NextPageLink() {
+  const { nextPage }: NextPageLink = usePageData('nextPage');
+  if (!nextPage) {
     return <div>&nbsp;</div>
   }
 
   return (
-    <Button variant="outlined" size="large" to={data.link}>
-      Next to {data.label}
+    <Button variant="outlined" size="large" to={nextPage.link}>
+      Next to {nextPage.label}
     </Button>
   )
 }
