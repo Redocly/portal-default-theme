@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import type { MdHeading } from '@portal/types';
 import { mediaQueries } from '@portal/media-css';
-import { useFullHeight, useActiveHeading } from '@portal/hooks';
+import { useFullHeight } from '@theme/hooks/useFullHeight';
+import { useActiveHeading } from '@theme/hooks/useActiveHeading';
 
 interface TableOfContentProps {
   headings?: Array<MdHeading | null> | null | undefined;
@@ -43,7 +45,7 @@ export default function TableOfContent(props: TableOfContentProps) {
                   key={href}
                   depth={heading.depth || 0}
                   href={href}
-                  className={'#' + activeHeadingId === href ? 'active' : ''}
+                  className={activeHeadingId === heading.id ? 'active' : ''}
                   dangerouslySetInnerHTML={{ __html: heading.value || '' }}
                   data-cy={`toc-${heading.value}`}
                 />
@@ -77,7 +79,7 @@ const MenuItem = styled.a<{ depth: number }>`
   :hover,
   &.active {
     color: var(--sidebar-text-active-color);
-    background-color: --sidebar-text-active-background-color;
+    background-color: var(--sidebar-text-active-background-color);
   }
   :empty {
     padding: 0;
