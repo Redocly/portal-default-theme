@@ -2,20 +2,15 @@ import React from '@portal/react';
 import styled from '@portal/styled-components';
 import type { MdHeading } from '@portal/types';
 import { mediaQueries } from '@portal/media-css';
-import { useFullHeight, useActiveHeading } from '@portal/hooks';
 
 interface TableOfContentProps {
   headings?: Array<MdHeading | null> | null | undefined;
-  contentWrapper: HTMLDivElement | null;
   tocMaxDepth: number;
+  activeHeadingId?: string;
 }
 
 export default function TableOfContent(props: TableOfContentProps) {
-  const { headings, tocMaxDepth } = props;
-
-  const sidebar = React.useRef<HTMLDivElement | null>(null);
-  useFullHeight(sidebar);
-  const activeHeadingId = useActiveHeading(props.contentWrapper);
+  const { headings, tocMaxDepth, activeHeadingId } = props;
 
   if (headings && headings.length === 1 && headings[0]?.depth === 1) {
     return null;
@@ -28,7 +23,7 @@ export default function TableOfContent(props: TableOfContentProps) {
     <>
       {headings && (
         <TableOfContentMenu data-component-name="TableOfContent/TableOfContent">
-          <TableOfContentItems ref={sidebar}>
+          <TableOfContentItems>
             <TocHeader>On this page</TocHeader>
             {headings.map((heading: MdHeading, idx: number) => {
               if (idx === 0 && heading.depth === 1) {
@@ -43,7 +38,7 @@ export default function TableOfContent(props: TableOfContentProps) {
                   key={href}
                   depth={heading.depth || 0}
                   href={href}
-                  className={'#' + activeHeadingId === href ? 'active' : ''}
+                  className={activeHeadingId === heading.id ? 'active' : ''}
                   dangerouslySetInnerHTML={{ __html: heading.value || '' }}
                   data-cy={`toc-${heading.value}`}
                 />
@@ -77,7 +72,7 @@ const MenuItem = styled.a<{ depth: number }>`
   :hover,
   &.active {
     color: var(--sidebar-text-active-color);
-    background-color: --sidebar-text-active-background-color;
+    background-color: var(--sidebar-text-active-background-color);
   }
   :empty {
     padding: 0;
