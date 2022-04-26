@@ -4,33 +4,15 @@ import styled from 'styled-components';
 import { Link } from '@portal/Link';
 import { OperationBadge } from '@redocly/reference-docs';
 import { ActiveItem, SearchDocument } from '@shared/models';
+import { Parameters } from './Parameters';
+import { highlight } from './utils';
 
 interface SearchItemProps {
   item: ActiveItem<SearchDocument>;
 }
 
-const MAX_SEARCH_ITEMS = 2;
-
 export function SearchItem({ item }: SearchItemProps) {
   const ref = useRef<HTMLAnchorElement>();
-
-  const highlight = (text: string | string[]) => {
-    if (!Array.isArray(text)) return text;
-
-    const [pre, entry, suf] = text;
-    return <>
-      {pre}
-        <Strong>{entry}</Strong>
-      {suf}
-    </>
-  };
-
-  let moreItems = 0;
-
-  if (item.parameters.length > MAX_SEARCH_ITEMS) {
-    moreItems = item.parameters.length - MAX_SEARCH_ITEMS;
-    item.parameters.length = MAX_SEARCH_ITEMS;
-  }
 
   useEffect(() => {
     if (item.active) {
@@ -40,10 +22,12 @@ export function SearchItem({ item }: SearchItemProps) {
 
   return (
     <SearchLink to={item.url} tabIndex={0} innerRef={ref}>
-      <Operaition>
-        {item.httpVerb ? <OperationBadge type={item.httpVerb}>{item.httpVerb}</OperationBadge> : null}
-        {highlight(item.pathName)}
-      </Operaition>
+      {item.httpVerb ?
+        <Operation>
+          <OperationBadge type={item.httpVerb}>{item.httpVerb}</OperationBadge>
+          {highlight(item.pathName)}
+        </Operation>
+      : null}
       <Title>
         {highlight(item.title)}
       </Title>
@@ -52,22 +36,8 @@ export function SearchItem({ item }: SearchItemProps) {
       </Description>
 
       {item.parameters?.length
-        ?
-        <Parameters>
-          {item.parameters.map(param => {
-            const path = `${param.place} → ${param.path?.length ? param.path?.join(' → ') + ' → ': ''}`;
-            return <>
-              <Place>
-                {path}{highlight(param.name)} <br/>
-                {highlight(param.description)}
-              </Place>
-            </>
-            })
-          }
-          {moreItems ? <MoreText>and {moreItems} more...</MoreText> : null}
-        </Parameters>
-        :
-        <Path>
+        ? <Parameters parameters={item.parameters}/>
+        : <Path>
           {item.path?.join(' → ')}
         </Path>
       }
@@ -90,57 +60,29 @@ const SearchLink = styled(Link)`
   }
 `;
 
-const Strong = styled.strong`
-  color: var(--color-primary-main);
-`
-
-const Parameters = styled.div`
-  border-left: 1px solid var(--color-border-light);
-  padding: 0 12px;
-  margin-top: 8px;
-  margin-bottom: 4px;
-`
-
-const MoreText = styled.div`
-  font-size: 12px;
-  font-weight: 100;
-  padding-top: 4px;
-`
-
-const Operaition = styled.div`
-  font-weight: 200;
-  font-size: 12px;
+const Operation = styled.div`
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-small);
   color: var(--search-item-title-text-color);
   overflow: hidden;
   text-overflow: ellipsis;
 `;
 
 const Title = styled.div`
-  line-height: 22px;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   color: var(--search-item-title-text-color);
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: var(--line-height-m);
 `;
 
 const Description = styled.div`
-  font-size: 14px;
+  font-size: var(--font-size-base);
   overflow: hidden;
   text-overflow: ellipsis;
-`;
-
-const Place = styled.div`
-  font-size: 12px;
-  padding-top: 8px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  
-  &:first-child {
-    padding-top: 0;
-  }
 `;
 
 const Path = styled.div`
-  font-size: 12px;
+  font-size: var(--font-size-small);
   line-height: 22px;
 `;
