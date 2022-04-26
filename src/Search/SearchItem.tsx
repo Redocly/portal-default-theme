@@ -2,7 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { Link } from '@portal/Link';
+import { OperationBadge } from '@redocly/reference-docs';
 import { ActiveItem, SearchDocument } from '@shared/models';
+import { Parameters } from './Parameters';
+import { highlight } from './utils';
 
 interface SearchItemProps {
   item: ActiveItem<SearchDocument>;
@@ -11,14 +14,6 @@ interface SearchItemProps {
 export function SearchItem({ item }: SearchItemProps) {
   const ref = useRef<HTMLAnchorElement>();
 
-  const highlight = ([pre, entry, suf]: string[]) => (
-    <>
-      {pre}
-      <strong>{entry}</strong>
-      {suf}
-    </>
-  );
-
   useEffect(() => {
     if (item.active) {
       ref.current.focus();
@@ -26,10 +21,26 @@ export function SearchItem({ item }: SearchItemProps) {
   }, [item.active]);
 
   return (
-    <SearchLink to={item.url} tabIndex={0} innerRef={ref} data-component-name="Search/SearchItem">
-      <Title>{item.title}</Title>
-      <Description>{highlight(item.chunks)}</Description>
-      <Path>{item.path.join(' > ')}</Path>
+    <SearchLink to={item.url} tabIndex={0} innerRef={ref}>
+      {item.httpVerb ?
+        <Operation>
+          <OperationBadge type={item.httpVerb}>{item.httpVerb}</OperationBadge>
+          {highlight(item.pathName)}
+        </Operation>
+      : null}
+      <Title>
+        {highlight(item.title)}
+      </Title>
+      <Description>
+        {highlight(item.text)}
+      </Description>
+
+      {item.parameters?.length
+        ? <Parameters parameters={item.parameters}/>
+        : <Path>
+          {item.path?.join(' → ')}
+        </Path>
+      }
     </SearchLink>
   );
 }
@@ -49,23 +60,31 @@ const SearchLink = styled(Link)`
   }
 `;
 
-const Title = styled.div`
-  font-weight: 600;
+const Operation = styled.div`
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-small);
   color: var(--search-item-title-text-color);
   overflow: hidden;
   text-overflow: ellipsis;
 `;
 
+const Title = styled.div`
+  font-weight: var(--font-weight-bold);
+  color: var(--search-item-title-text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: var(--line-height-m);
+`;
+
 const Description = styled.div`
-  font-size: 14px;
-  line-height: 22px;
+  font-size: var(--font-size-base);
   overflow: hidden;
   text-overflow: ellipsis;
 `;
 
 const Path = styled.div`
-  font-size: 12px;
-  line-height: 22px;
+  font-size: var(--font-size-small);
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 22px;
 `;
