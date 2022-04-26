@@ -1,7 +1,7 @@
-import React from '@portal/react';
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 import { ItemState } from '@portal/Sidebar/types';
 import { BackButton } from '@theme/Sidebar/BackButton';
-import styled, { keyframes } from '@portal/styled-components';
 import { DrilldownMenuItem } from '@theme/Sidebar/DrilldownMenuItem';
 
 export interface DrilldownMenuProps {

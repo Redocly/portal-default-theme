@@ -1,4 +1,4 @@
-import styled from '@portal/styled-components';
+import styled from 'styled-components';
 
 export const PageWrapper = styled.div.attrs(() => ({
   'data-component-name': 'Markdown/PageWrapper'

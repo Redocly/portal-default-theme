@@ -1,5 +1,5 @@
-import React from '@portal/react';
-import styled from '@portal/styled-components';
+import React from 'react';
+import styled from 'styled-components';
 
 const Icon = ({ className }: React.HTMLProps<HTMLElement>) => (
   <span data-component-name="Sidebar/ExternalIcon">

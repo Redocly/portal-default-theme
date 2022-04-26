@@ -1,8 +1,8 @@
-import React from '@portal/react';
+import React from 'react';
+import styled from 'styled-components';
+import { useLocation } from 'react-router-dom';
 import { Link } from '@portal/Link';
-import { useLocation } from '@portal/hooks';
 import { withPathPrefix } from '@portal/utils';
-import styled from '@portal/styled-components';
 import type { ResolvedNavLinkItem } from '@portal/types';
 
 interface NavbarItemProps {

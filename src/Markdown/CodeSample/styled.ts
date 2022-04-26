@@ -1,6 +1,6 @@
 import { getLuminance } from 'polished';
+import styled, { css } from 'styled-components';
 import { typography } from '@theme/ui/Typography';
-import styled, { css } from '@portal/styled-components';
 import type { Tokens } from '@theme/Markdown/CodeSample/types';
 
 function genTokens(tokens?: Tokens | null) {

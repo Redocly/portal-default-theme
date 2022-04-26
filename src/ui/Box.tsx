@@ -13,8 +13,8 @@ import {
   PositionProps,
   FlexProps,
   BordersProps,
-} from '@portal/styled-system';
-import styled from '@portal/styled-components';
+} from 'styled-system';
+import styled from 'styled-components';
 
 export interface BoxProps
   extends SpaceProps,

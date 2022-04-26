@@ -1,4 +1,4 @@
-import React from '@portal/react';
+import React from 'react';
 import { copyToClipboard } from '@portal/utils';
 import {
   Wrapper,

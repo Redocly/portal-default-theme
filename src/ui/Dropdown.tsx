@@ -1,6 +1,7 @@
-import React from '@portal/react';
+import React from 'react';
+import styled from 'styled-components';
+
 import { Link } from '@portal/Link';
-import styled from '@portal/styled-components';
 
 const Icon = () => (
   <svg

@@ -1,6 +1,7 @@
-import { space } from '@portal/styled-system';
+import { space } from 'styled-system';
+import styled from 'styled-components';
+
 import { H1, H2 } from '@theme/ui/Typography';
-import styled from '@portal/styled-components';
 import { Background } from '@theme/ui/Background';
 
 export const Jumbotron = styled(Background).attrs(() => ({

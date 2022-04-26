@@ -1,5 +1,5 @@
-import React from '@portal/react';
-import styled from '@portal/styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import FooterColumn from '@theme/Footer/FooterColumn';
 import { mediaQueries } from '@portal/media-css';
 

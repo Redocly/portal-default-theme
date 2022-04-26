@@ -1,6 +1,7 @@
-import React from '@portal/react';
+import React from 'react';
+import styled from 'styled-components';
+
 import { Box, BoxProps } from '@theme/ui/Box';
-import styled from '@portal/styled-components';
 import { flexbox, FlexboxProps } from '@portal/styled-system';
 
 export interface FlexProps extends BoxProps, FlexboxProps {}

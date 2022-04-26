@@ -1,6 +1,6 @@
+import React from 'react';
 import { LinkProps } from 'react-router-dom';
 
-import React from '@portal/react';
 import { Link } from '@portal/Link';
 import { Button as RefDocsButton, ButtonProps } from '@redocly/reference-docs';
 

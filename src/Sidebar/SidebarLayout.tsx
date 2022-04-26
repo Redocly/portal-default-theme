@@ -1,5 +1,5 @@
-import React from '@portal/react';
-import styled from '@portal/styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { Sidebar } from '@theme/Sidebar/Sidebar';
 import { useMobileMenu } from '@portal/useMobileMenu';
 import { MobileSidebarButton } from '@theme/Sidebar/MobileSidebarButton';

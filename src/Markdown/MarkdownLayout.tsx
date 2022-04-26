@@ -1,4 +1,4 @@
-import React from '@portal/react';
+import React from 'react';
 import { PageWrapper } from '@theme/Markdown/PageWrapper';
 import { ContentWrapper } from '@theme/Markdown/ContentWrapper';
 
