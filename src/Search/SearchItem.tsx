@@ -54,14 +54,16 @@ export function SearchItem({ item }: SearchItemProps) {
       {item.parameters?.length
         ?
         <Parameters>
-          {item.parameters.map(param => (
-            <>
+          {item.parameters.map(param => {
+            const path = `${param.place} → ${param.path?.length ? param.path?.join(' → ') + ' → ': ''}`;
+            return <>
               <Place>
-                {param.place} → {highlight(param.name)} <br/>
+                {path}{highlight(param.name)} <br/>
                 {highlight(param.description)}
               </Place>
             </>
-          ))}
+            })
+          }
           {moreItems ? <MoreText>and {moreItems} more...</MoreText> : null}
         </Parameters>
         :
