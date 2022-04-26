@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { flexbox, FlexboxProps } from 'styled-system';
 
 import { Box, BoxProps } from '@theme/ui/Box';
-import { flexbox, FlexboxProps } from '@portal/styled-system';
 
 export interface FlexProps extends BoxProps, FlexboxProps {}
 
