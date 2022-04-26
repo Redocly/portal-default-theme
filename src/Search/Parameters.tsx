@@ -10,10 +10,8 @@ interface ParametersProps {
 const MAX_ITEMS = 2;
 
 export function Parameters({ parameters = []}: ParametersProps) {
-  let moreItems = 0;
-
-  if (parameters.length > MAX_ITEMS) {
-    moreItems = parameters.length - MAX_ITEMS;
+  const moreItems = Math.max(0, parameters.length - MAX_ITEMS)
+  if (moreItems) {
     parameters.length = MAX_ITEMS;
   }
 

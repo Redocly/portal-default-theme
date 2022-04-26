@@ -84,5 +84,7 @@ const Description = styled.div`
 
 const Path = styled.div`
   font-size: var(--font-size-small);
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 22px;
 `;
