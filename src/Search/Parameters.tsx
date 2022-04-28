@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { OperationParameter } from '@shared/models';
-import { highlight } from './utils';
+import { highlight } from '@theme/Search/utils';
 
 interface ParametersProps {
   parameters: OperationParameter[];
@@ -17,7 +17,7 @@ export function Parameters({ parameters = []}: ParametersProps) {
   }
 
   return (
-    <Wrapper>
+    <Wrapper data-component-name="Search/Parameters">
       {parameters.map(param => {
         const path = `${param.place} → ${param.path?.length ? param.path?.join(' → ') + ' → ': ''}`;
         return <>

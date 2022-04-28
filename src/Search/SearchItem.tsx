@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { Link } from '@portal/Link';
 import { OperationBadge } from '@redocly/reference-docs';
 import { ActiveItem, SearchDocument } from '@shared/models';
-import { Parameters } from './Parameters';
-import { highlight } from './utils';
+import { Parameters } from '@theme/Search/Parameters';
+import { highlight } from '@theme/Search/utils';
 
 interface SearchItemProps {
   item: ActiveItem<SearchDocument>;
@@ -21,7 +21,7 @@ export function SearchItem({ item }: SearchItemProps) {
   }, [item.active]);
 
   return (
-    <SearchLink to={item.url} tabIndex={0} innerRef={ref}>
+    <SearchLink to={item.url} tabIndex={0} innerRef={ref} data-component-name="Search/SearchItem">
       {item.httpVerb ?
         <Operation>
           <OperationBadge type={item.httpVerb}>{item.httpVerb}</OperationBadge>
