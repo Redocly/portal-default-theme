@@ -3,10 +3,12 @@ import type { ResolvedNavLinkItem } from '@portal/types';
 import { usePageData } from '@portal/hooks/usePageData';
 import { Button } from '@theme/ui';
 
-type NextPageLink = ResolvedNavLinkItem | null;
+interface NextPageType {
+  nextPage: ResolvedNavLinkItem | null;
+}
 
 export function NextPageLink() {
-  const { nextPage }: NextPageLink = usePageData();
+  const { nextPage }: NextPageType = usePageData();
   if (!nextPage) {
     return <div>&nbsp;</div>
   }

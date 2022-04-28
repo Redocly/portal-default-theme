@@ -3,10 +3,12 @@ import type { ResolvedNavLinkItem } from '@portal/types';
 import { usePageData } from '@portal/hooks/usePageData';
 import { Button } from '@theme/ui';
 
-type PreviousPageLink = ResolvedNavLinkItem | null;
+interface PreviousPageType {
+  prevPage: ResolvedNavLinkItem | null;
+}
 
 export function PreviousPageLink() {
-  const { prevPage }: PreviousPageLink = usePageData();
+  const { prevPage }: PreviousPageType = usePageData();
   if (!prevPage) {
     return <div>&nbsp;</div>
   }
