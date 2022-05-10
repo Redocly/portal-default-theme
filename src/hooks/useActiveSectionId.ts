@@ -3,7 +3,7 @@ import throttle from 'lodash.throttle';
 
 import { useNavbarHeight } from '@theme/hooks/useNavbarHeight';
 
-export function useActiveSectionId(location, hasOverviewPage: boolean) {
+export function useActiveSectionId(location) {
   const [itemId, setItemId] = React.useState<string>('');
   const navbarHeight = useNavbarHeight(location);
   const scrollListener = React.useCallback(
@@ -22,11 +22,7 @@ export function useActiveSectionId(location, hasOverviewPage: boolean) {
           return;
         }
       }
-      if (hasOverviewPage) {
-        setItemId('');
-      } else {
-        setItemId((sections[0] && sections[0].getAttribute('data-section-id')) || '');
-      }
+      setItemId((sections[0] && sections[0].getAttribute('data-section-id')) || '');
     }, 150),
     [location, navbarHeight],
   );
